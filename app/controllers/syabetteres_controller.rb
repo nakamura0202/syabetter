@@ -28,9 +28,7 @@ class SyabetteresController < ApplicationController
   end
   
   def update
-    
-    @syabettere = Syabettere.find(params[:id])
-    
+   @syabettere = Syabettere.find(params[:id])
     if @syabettere.update(syabetteres_params)
       redirect_to syabetteres_path, notice: "べしゃりを更新しました！"
     else

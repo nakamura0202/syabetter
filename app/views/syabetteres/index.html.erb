@@ -1,16 +1,14 @@
 <div class="container">
-  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-   <p><%= notice %></p>
-   <h1>talk list</h1>
-    <%= link_to "talkを作成する", new_syabettere_path, class: 'btn btn-default' %>
-   <% @syabettere.each do |syabetter| %>
+ <div class="wrapper col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+  <p><%= notice %></p>
+   <h1>トークリスト</h1>
+    <%= link_to "トークを作成する", new_syabettere_path, class: 'btn btn-success' %>
+    <% @syabettere.each do |syabetter| %>
    <div class="row">
-    <h4><strong><%= syabetter.title %></strong></h4>
-     <p><%= syabetter.content %></p>
-
-  <%= link_to "編集", edit_syabettere_path(syabetter.id), class: 'btn btn-default btn-sm btn-success' %>
-  <%= link_to "削除", syabettere_path(syabetter.id), method: :delete, data: { confirm:"本当に削除していいですか？" }, class: 'btn btn-default btn-sm btn btn-danger' %>
-  </div>
-   <% end %>
-  </div>
+    <p><%= syabetter.content %></p>
+    <%= link_to "編集", edit_syabettere_path(syabetter.id), class: 'btn btn-default btn-sm btn-info' %>
+    <%= link_to "削除", syabettere_path(syabetter.id), method: :delete, data: { confirm:"本当に削除していいですか？" }, class: 'btn btn-default btn-sm btn btn-danger' %>
+   </div>
+  <% end %>
+ </div>
 </div>
